@@ -1,0 +1,111 @@
+# ==============================================================================
+# .gitignore - Projet Détection des Crises d'Absence EEG & Chatbot Médical
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Environnements Virtuels Python
+# ------------------------------------------------------------------------------
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------------------------
+# 2. Bytecode & Caches Python
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ------------------------------------------------------------------------------
+# 3. Cache & Fichiers Sérialisés de l'Application (Streamlit / eeg_core)
+# ------------------------------------------------------------------------------
+# cache_app contient patients.pkl et dataset.pkl générés automatiquement
+cache_app/
+*.pkl
+*.pickle
+*.joblib
+
+# Secrets Streamlit (conserve config.toml mais ignore les clés/mots de passe)
+.streamlit/secrets.toml
+
+# ------------------------------------------------------------------------------
+# 4. Checkpoints Jupyter Notebook
+# ------------------------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ------------------------------------------------------------------------------
+# 5. Fine-Tuning LLM & Modèles Lourds (train_chatbot_qlora.py)
+# ------------------------------------------------------------------------------
+# Adaptateur LoRA et poids de modèle générés lors du fine-tuning
+lora_model_dgre/
+checkpoints/
+checkpoint-*/
+*.safetensors
+*.pt
+*.pth
+*.bin
+
+# Logs d'entraînement
+runs/
+wandb/
+
+# Jeux de données intermédiaires générés pour le chatbot
+train_split.jsonl
+test_split.jsonl
+
+# ------------------------------------------------------------------------------
+# 6. Données Volumineuses (Signaux bruts EEG MATLAB)
+# ------------------------------------------------------------------------------
+# Les signaux bruts .mat représentent ~700 Mo (certains fichiers > 50-80 Mo).
+# GitHub bloque les fichiers > 100 Mo et avertit au-delà de 50 Mo.
+# Note : 'dataset_fenetres_eeg.csv' et 'Crises absences.xlsx' restent trackés
+# pour faire tourner l'application et les notebooks sans nécessiter les .mat.
+*.mat
+
+# ------------------------------------------------------------------------------
+# 7. Fichiers Temporaires & Fichiers de Verrouillage Office (Excel / Word)
+# ------------------------------------------------------------------------------
+~$*.xlsx
+~$*.xls
+~$*.docx
+~$*.doc
+~$*.pptx
+.~lock.*#
+
+# ------------------------------------------------------------------------------
+# 8. Dossiers de Brouillon & Captures d'Écran
+# ------------------------------------------------------------------------------
+Claude outputs/
+a faire/
+
+# ------------------------------------------------------------------------------
+# 9. Fichiers Systèmes & Éditeurs / IDE
+# ------------------------------------------------------------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# VS Code / JetBrains / Swap
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*~

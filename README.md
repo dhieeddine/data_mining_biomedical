@@ -6,6 +6,53 @@
 
 ---
 
+## ⚡ Démarrage Rapide (Quick Start)
+
+### 1. Prérequis
+- **Python** 3.9 à 3.11
+- **Git**
+
+### 2. Installation
+
+Clonez le dépôt et placez-vous dans le répertoire du projet :
+```bash
+git clone https://github.com/dhieeddine/data_mining_biomedical.git
+cd data_mining_biomedical
+```
+
+Créez et activez un environnement virtuel, puis installez les dépendances :
+
+```bash
+# Windows (PowerShell / CMD)
+python -m venv venv
+venv\Scripts\activate
+
+# Linux / macOS
+python3 -m venv venv
+source venv/bin/activate
+
+# Installation des bibliothèques
+pip install -r requirements.txt
+```
+
+### 3. Lancement de l'Application Streamlit
+
+- **Option rapide (Windows) :** Double-cliquez directement sur le fichier [`Lancer_application.bat`](file:///d:/Desktop/data_mining/data-mining/Lancer_application.bat).
+- **Option ligne de commande :**
+  ```bash
+  streamlit run app.py
+  ```
+L'application se lance automatiquement à l'adresse [http://localhost:8501](http://localhost:8501) avec les descripteurs pré-extraits ([`dataset_fenetres_eeg.csv`](file:///d:/Desktop/data_mining/data-mining/dataset_fenetres_eeg.csv)) sans nécessiter de recalcul lourd.
+
+### 4. Exploration du Notebook de Recherche
+
+Pour inspecter la démarche méthodologique, la modélisation et les visualisations pas à pas :
+```bash
+jupyter notebook Projet_EEG_Crises_Absence.ipynb
+```
+
+---
+
 ## 1. Introduction et Problématique Clinique
 
 L'épilepsie de type « absence » se caractérise sur l'électroencéphalogramme (EEG) par des décharges généralisées, bilatérales et synchrones de **pointes-ondes à 3 Hz** (environ 2.5 à 4 Hz). Dans le cadre de ce projet, les enregistrements EEG de 21 patients comportent 19 électrodes conformes au système standard international 10-20.
